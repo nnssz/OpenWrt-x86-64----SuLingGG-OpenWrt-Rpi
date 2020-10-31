@@ -78,7 +78,7 @@ jobs:
         chmod +x scripts/*.sh
         cd $OPENWRTROOT
         ../$DIY_SH
-        ../scripts/preset-clash-core.sh x86_64
+        ../scripts/preset-clash-core.sh amd64
         ../scripts/preset-terminal-tools.sh
         ../scripts/create-acl.sh -a
     #    ../scripts/enable-rpi4-wifi.sh
