@@ -79,7 +79,6 @@ jobs:
         cd $OPENWRTROOT
         ../$DIY_SH
         ../scripts/preset-clash-core.sh amd64
-    #    ../scripts/preset-terminal-tools.sh
         ../scripts/create-acl.sh -a
    
     - name: Download Package
