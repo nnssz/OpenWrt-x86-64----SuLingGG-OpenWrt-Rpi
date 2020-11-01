@@ -54,7 +54,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # Add OpenClash.
-git clone -b master --depth=1 https://github.com/vernesong/OpenClash
+# git clone -b master --depth=1 https://github.com/vernesong/OpenClash
 
 # Add luci-app-onliner. (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
@@ -106,11 +106,11 @@ popd
 pushd package/lean/default-settings/files
 # sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" zzz-default-settings
 # sed -i '/http/d' zzz-default-settings
-sed -i '/exit/i\chmod +x /bin/ipv6-helper' zzz-default-settings
+# sed -i '/exit/i\chmod +x /bin/ipv6-helper' zzz-default-settings
 popd
 
 # Mod ipv6-helper.sh
-sed -i '/filter_aaaa/d;/commit dhcp/d' ../scripts/ipv6-helper.sh
+# sed -i '/filter_aaaa/d;/commit dhcp/d' ../scripts/ipv6-helper.sh
 
 # Remove orig kcptun
 rm -rf ./feeds/packages/net/kcptun
