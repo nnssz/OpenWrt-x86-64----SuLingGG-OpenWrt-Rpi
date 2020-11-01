@@ -21,7 +21,7 @@ popd
 
 # Default settings
 pushd package/lean
-git clone --depth=1 https://github.com/SuLingGG/default-settings
+git clone --depth=1 https://github.com/nnssz/default-settings
 
 # Add Project OpenWrt's autocore
 rm -rf autocore
@@ -91,8 +91,8 @@ git clone --depth=1 https://github.com/bao3/openwrt-udpspeeder
 git clone --depth=1 https://github.com/bao3/luci-udptools
 
 # luci-app-dockerman
-git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
-git clone --depth=1 https://github.com/lisaac/luci-lib-docker
+# git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
+# git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add tmate
 git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
@@ -104,8 +104,8 @@ popd
 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
-sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" zzz-default-settings
-sed -i '/http/d' zzz-default-settings
+# sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" zzz-default-settings
+# sed -i '/http/d' zzz-default-settings
 sed -i '/exit/i\chmod +x /bin/ipv6-helper' zzz-default-settings
 popd
 
@@ -137,7 +137,7 @@ sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\
 popd
 
 # Change default shell to zsh
-sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
+# sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # Use Lean's golang to fix latest v2ray compile errors
 pushd feeds/packages/lang
