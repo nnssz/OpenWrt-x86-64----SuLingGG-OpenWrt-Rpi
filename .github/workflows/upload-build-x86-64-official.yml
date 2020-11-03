@@ -79,9 +79,7 @@ jobs:
         cd $OPENWRTROOT
         ../$DIY_SH
 
-
-
-   - name: Download Package
+    - name: Download Package
       id: package
       run: |
         cd $OPENWRTROOT
