@@ -9,8 +9,8 @@
 name: Build X86_64 Offical OpenWrt
 
 on:
-#  repository_dispatch:
-#    types: [offical, x86_64]
+  repository_dispatch:
+    types: [offical, x86_64]
   workflow_dispatch:
 #  release:
 #    types: published
