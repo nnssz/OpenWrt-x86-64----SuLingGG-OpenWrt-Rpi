@@ -78,8 +78,7 @@ jobs:
         chmod +x scripts/*.sh
         cd $OPENWRTROOT
         ../$DIY_SH
-        ../scripts/preset-clash-core.sh amd64
-        ../scripts/create-acl.sh -a
+
    
     - name: Download Package
       id: package
