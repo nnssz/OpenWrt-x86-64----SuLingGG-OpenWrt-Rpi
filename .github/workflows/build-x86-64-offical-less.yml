@@ -213,16 +213,6 @@ jobs:
         name: ${{ env.DEVICE }}-rootfs.tar.gz
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-rootfs.tar.gz
         
-    - name: Upload combined-squashfs Image
-      uses: actions/upload-artifact@main
-      if: steps.generate.outputs.status == 'success' && env.UPLOAD_SQUASHFS_IMAGES == 'true'
-      with:
-        name: ${{ env.DEVICE }}-combined-squashfs.img
-        path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img
-        
-
-        
-
 
     - name: Upload Images Sha256sums
       uses: actions/upload-artifact@main
