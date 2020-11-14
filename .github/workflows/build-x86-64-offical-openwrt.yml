@@ -163,11 +163,11 @@ jobs:
         zip -q -r packages-server.zip pre-packages-server/server
         
 
-    - name: Upload Combined DVD Image
+    - name: Upload combined-squashfs Image
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.status == 'success'
       with:
-        name: ${{ env.DEVICE }}-squashfs-combined.img
+        name: ${{ env.DEVICE }}-combined-squashfs.img
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img.gz
 
 
@@ -175,7 +175,7 @@ jobs:
       if: steps.generate.outputs.status == 'success'
       run: |
         cd $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
-        gzip -qdc $DEVICE-squashfs-combined.img.gz > $DEVICE-squashfs-combined.img || true
+        gzip -qdc $DEVICE-combined-squashfs.img.gz > $DEVICE-combined-squashfs.img || true
 
         
     - name: Generate Sha256sum File For Images
@@ -217,7 +217,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.status == 'success' && env.UPLOAD_SQUASHFS_IMAGES == 'true'
       with:
-        name: ${{ env.DEVICE }}-squashfs-combined.img
+        name: ${{ env.DEVICE }}-combined-squashfs.img
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img
         
 
