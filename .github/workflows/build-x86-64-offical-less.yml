@@ -26,7 +26,7 @@ env:
   DEVICE: openwrt-x86-64
   DIY_SH: scripts/offical-openwrt.sh
   IPV6MOD_IN_FIRMWARE: false
-  KMODS_IN_FIRMWARE: true
+  KMODS_IN_FIRMWARE: false
   UPLOAD_EXT4_IMAGES: false
   UPLOAD_SQUASHFS_IMAGES: true
   UPLOAD_ROOTFS: false
@@ -163,11 +163,11 @@ jobs:
         zip -q -r packages-server.zip pre-packages-server/server
         
 
-    - name: Upload Combined DVD Image
+    - name: Upload combined-squashfs Image
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.status == 'success'
       with:
-        name: ${{ env.DEVICE }}-squashfs-combined.img
+        name: ${{ env.DEVICE }}-combined-squashfs.img
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img.gz
 
 
@@ -175,7 +175,7 @@ jobs:
       if: steps.generate.outputs.status == 'success'
       run: |
         cd $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
-        gzip -qdc $DEVICE-squashfs-combined.img.gz > $DEVICE-squashfs-combined.img || true
+        gzip -qdc $DEVICE-combined-squashfs.img.gz > $DEVICE-combined-squashfs.img || true
 
         
     - name: Generate Sha256sum File For Images
@@ -213,11 +213,11 @@ jobs:
         name: ${{ env.DEVICE }}-rootfs.tar.gz
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-rootfs.tar.gz
         
-    - name: Upload SquashFS Combined Image
+    - name: Upload combined-squashfs Image
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.status == 'success' && env.UPLOAD_SQUASHFS_IMAGES == 'true'
       with:
-        name: ${{ env.DEVICE }}-squashfs-combined.img
+        name: ${{ env.DEVICE }}-combined-squashfs.img
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img
         
 
