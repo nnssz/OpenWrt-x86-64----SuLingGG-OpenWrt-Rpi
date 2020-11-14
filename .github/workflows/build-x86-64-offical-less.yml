@@ -15,9 +15,9 @@ on:
 #  release:
 #    types: published
   schedule:
-    - cron: 0 18 */4 * *
-#  watch:
-#    types: started
+    - cron: 0 18 */2 * *
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
