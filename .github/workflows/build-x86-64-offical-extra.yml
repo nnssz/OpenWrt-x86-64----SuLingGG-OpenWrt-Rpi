@@ -163,11 +163,11 @@ jobs:
         zip -q -r packages-server.zip pre-packages-server/server
         
 
-    - name: Upload combined-squashfs Image
+    - name: Upload combined-squashfs.img.gz
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.status == 'success'
       with:
-        name: ${{ env.DEVICE }}-combined-squashfs.img
+        name: ${{ env.DEVICE }}-combined-squashfs.img.gz
         path: openwrt/bin/targets/${{ env.TARGET }}/${{ env.SUBTARGET }}/${{ env.DEVICE }}-combined-squashfs.img.gz
 
 
