@@ -33,6 +33,12 @@ rm -rf helloworld/luci-app-ssr-plus/po/zh_Hans
 
 popd
 
+
+# Add luci-app-access-control from k-szuster; lean's luci-access-control not work now 201119.
+pushd feeds/luci/applications
+git clone --depth=1 https://github.com/k-szuster/luci-access-control.git
+popd
+
 # Clean Lean's code
 pushd package
 rm -rf lede
