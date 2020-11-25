@@ -30,9 +30,12 @@ svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/a
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
 rm -rf helloworld/luci-app-ssr-plus/po/zh_Hans
-
 popd
 
+# Add Project OpenWrt's luci-app-unblockneteasemusic
+pushd package
+git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic.git
+popd
 
 # Add luci-app-access-control from k-szuster; lean's luci-access-control not work now 201119.
 pushd feeds/luci/applications
