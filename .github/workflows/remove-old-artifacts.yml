@@ -1,16 +1,17 @@
-name: Remove old artifacts
+name: Delete Workflow Runs
 
 on:
   workflow_dispatch:
 
-jobs:
-  remove-old-artifacts:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+  schedule:
+    - cron: '0 0 * * *'
 
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
     steps:
-    - name: Remove old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-        age: '1 day'
-        skip-recent: 5
+      - name: Delete Workflow Runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          retain_days: 7
