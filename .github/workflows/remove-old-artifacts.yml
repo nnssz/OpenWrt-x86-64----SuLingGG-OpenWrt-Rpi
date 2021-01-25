@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+  watch:
+    types: started
+
 jobs:
   del_runs:
     runs-on: ubuntu-latest
