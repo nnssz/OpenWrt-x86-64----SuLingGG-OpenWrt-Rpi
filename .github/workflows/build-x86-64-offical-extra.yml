@@ -21,7 +21,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v19.07.6
+  REPO_BRANCH: v19.07.7
   CONFIG_FILE: config/offical/x86-64/x86-64-offical-target.config
   DEVICE: openwrt-x86-64
   DIY_SH: scripts/offical-openwrt.sh
