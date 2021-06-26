@@ -6,7 +6,9 @@ Make suitable ssr-plus and passwall ipks (include luci and all deps) for officia
 
 Mod from https://github.com/SuLingGG/OpenWrt-Rpi
 
-增加自制软件包需要两步：1.在script添加源；2.在config添加配置。
+增加自制软件包需要两步：
+1. scripts/offical-openwrt.sh 当中添加软件源；
+2. 在config/offical/x86-64/x86-64-official-less.config 或 x86-64-official-extra.config 当中添加配置项。
 
 ## 鸣谢
 
